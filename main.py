@@ -4,8 +4,6 @@ from constants import *
 
 def main():
     print("Starting Asteroids!")
-    #print(f"Screen width: {SCREEN_WIDTH}")
-    #print(f"Screen height: {SCREEN_HEIGHT}")
 
     pygame_module_init_pass, pygame_module_init_fail = pygame.init()
     print("Pygame Initialization")
@@ -24,9 +22,10 @@ def main():
             if event.type == pygame.QUIT:
                 return
     
+        main_player.update(dt)
+
         screen.fill(color="black")
         main_player.draw(screen)
-
 
         pygame.display.flip()
         dt = clock.tick(60) / 1000
